@@ -39,6 +39,599 @@
             </div>
          </div>
       </div>
+	   <!-- =====================================================
+     NOSIWEB — DEMO WEBSITE DISCLAIMER
+     Place immediately after <body>
+====================================================== -->
+
+<div id="nosiDemoNotice" class="nosi-demo-overlay">
+
+  <div class="nosi-demo-box">
+
+    <!-- Information Icon -->
+    <div class="nosi-demo-icon">
+      i
+    </div>
+
+
+    <!-- Heading -->
+    <h2>
+      Demo & Developer Practice Website
+    </h2>
+
+
+    <!-- Description -->
+
+    <p>
+      This website has been created by
+      <strong>NosiWeb</strong>
+      for demonstration, educational and developer
+      practice purposes.
+    </p>
+
+
+    <p>
+      This is <strong>not an official website</strong>
+      of the original business, organization, brand,
+      company or website represented by this project.
+    </p>
+
+
+    <p>
+      The original owner has no connection, partnership,
+      responsibility or affiliation with this demo website
+      unless explicitly stated otherwise.
+    </p>
+
+
+    <p>
+      For questions, concerns, copyright issues or other
+      matters regarding this demonstration website,
+      please contact the developer.
+    </p>
+
+
+    <!-- Rights -->
+
+    <div class="nosi-demo-rights">
+
+      © 2026 NosiWeb. All rights reserved.
+
+      <br>
+
+      No ownership or rights are claimed over the original
+      business, brand, trademarks, logos, images or other
+      third-party materials represented in this demonstration.
+
+    </div>
+
+
+    <!-- Buttons -->
+
+    <div class="nosi-demo-buttons">
+
+      <!-- Developer Website -->
+
+      <a
+        href="https://YOUR-DEVELOPER-WEBSITE.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nosi-developer-btn">
+
+        Developer Information
+
+      </a>
+
+
+      <!-- Enter Website -->
+
+      <button
+        type="button"
+        onclick="nosiEnterWebsite()"
+        class="nosi-enter-btn">
+
+        OK, I Understand
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<style>
+
+/* =====================================================
+   NOSIWEB DEMO OVERLAY
+====================================================== */
+
+.nosi-demo-overlay {
+
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 999999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    max(12px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  overflow: hidden;
+
+}
+
+
+/* =====================================================
+   POPUP
+====================================================== */
+
+.nosi-demo-box {
+
+  width: min(600px, 100%);
+
+  /*
+     Never become taller than the screen.
+  */
+
+  max-height: calc(100dvh - 24px);
+
+  overflow-y: auto;
+
+  padding: 28px;
+
+  background: #ffffff;
+
+  color: #27272a;
+
+  border-radius: 18px;
+
+  border: 1px solid #e4e4e7;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  /*
+     Smooth scrolling on mobile.
+  */
+
+  -webkit-overflow-scrolling: touch;
+
+}
+
+
+/* =====================================================
+   CUSTOM SCROLLBAR
+====================================================== */
+
+.nosi-demo-box::-webkit-scrollbar {
+
+  width: 5px;
+
+}
+
+.nosi-demo-box::-webkit-scrollbar-track {
+
+  background: transparent;
+
+}
+
+.nosi-demo-box::-webkit-scrollbar-thumb {
+
+  background: #d4d4d8;
+
+  border-radius: 10px;
+
+}
+
+
+/* =====================================================
+   ICON
+====================================================== */
+
+.nosi-demo-icon {
+
+  width: 46px;
+  height: 46px;
+
+  margin: 0 auto 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff7ed;
+
+  color: #f97316;
+
+  border: 1px solid #fed7aa;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   HEADING
+====================================================== */
+
+.nosi-demo-box h2 {
+
+  margin: 0 0 14px;
+
+  color: #18181b;
+
+  font-size: clamp(20px, 5vw, 25px);
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+}
+
+
+/* =====================================================
+   TEXT
+====================================================== */
+
+.nosi-demo-box p {
+
+  margin: 0 0 11px;
+
+  color: #52525b;
+
+  font-size: 13.5px;
+
+  line-height: 1.55;
+
+}
+
+
+.nosi-demo-box strong {
+
+  color: #18181b;
+
+}
+
+
+/* =====================================================
+   RIGHTS
+====================================================== */
+
+.nosi-demo-rights {
+
+  margin-top: 16px;
+
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  background: #f4f4f5;
+
+  color: #71717a;
+
+  font-size: 11.5px;
+
+  line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+====================================================== */
+
+.nosi-demo-buttons {
+
+  margin-top: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+}
+
+
+.nosi-developer-btn,
+.nosi-enter-btn {
+
+  min-height: 42px;
+
+  padding: 10px 18px;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+
+/* =====================================================
+   DEVELOPER BUTTON
+====================================================== */
+
+.nosi-developer-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #e4e4e7;
+
+  background: #ffffff;
+
+  color: #18181b;
+
+}
+
+
+.nosi-developer-btn:hover {
+
+  border-color: #f97316;
+
+  color: #ea580c;
+
+  transform: translateY(-1px);
+
+}
+
+
+/* =====================================================
+   ENTER BUTTON
+====================================================== */
+
+.nosi-enter-btn {
+
+  border: 1px solid #18181b;
+
+  background: #18181b;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+}
+
+
+.nosi-enter-btn:hover {
+
+  border-color: #f97316;
+
+  background: #f97316;
+
+  transform: translateY(-1px);
+
+}
+
+
+/* =====================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 700px) {
+
+  .nosi-demo-box {
+
+    padding: 24px 20px;
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 480px) {
+
+  .nosi-demo-overlay {
+
+    padding: 10px;
+
+  }
+
+
+  .nosi-demo-box {
+
+    width: 100%;
+
+    max-height: calc(100dvh - 20px);
+
+    padding: 22px 17px;
+
+    border-radius: 16px;
+
+  }
+
+
+  .nosi-demo-icon {
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 11px;
+
+    font-size: 20px;
+
+  }
+
+
+  .nosi-demo-box h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+
+  }
+
+
+  .nosi-demo-box p {
+
+    font-size: 12.5px;
+
+    line-height: 1.5;
+
+    margin-bottom: 9px;
+
+  }
+
+
+  .nosi-demo-rights {
+
+    margin-top: 13px;
+
+    padding: 10px 11px;
+
+    font-size: 10.5px;
+
+  }
+
+
+  .nosi-demo-buttons {
+
+    margin-top: 15px;
+
+    gap: 8px;
+
+  }
+
+
+  .nosi-developer-btn,
+  .nosi-enter-btn {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 10px 9px;
+
+    font-size: 12px;
+
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+====================================================== */
+
+@media (max-width: 350px) {
+
+  .nosi-demo-box {
+
+    padding: 18px 14px;
+
+  }
+
+
+  .nosi-demo-box h2 {
+
+    font-size: 18px;
+
+  }
+
+
+  .nosi-demo-box p {
+
+    font-size: 11.5px;
+
+  }
+
+
+  .nosi-demo-buttons {
+
+    flex-direction: column;
+
+    width: 100%;
+
+  }
+
+
+  .nosi-developer-btn,
+  .nosi-enter-btn {
+
+    width: 100%;
+
+    flex: none;
+
+  }
+
+}
+
+</style>
+
+
+
+<script>
+
+/* =====================================================
+   ENTER WEBSITE
+====================================================== */
+
+function nosiEnterWebsite() {
+
+  const notice =
+    document.getElementById("nosiDemoNotice");
+
+
+  notice.style.opacity = "0";
+
+  notice.style.transition =
+    "opacity 0.25s ease";
+
+
+  setTimeout(function () {
+
+    notice.style.display = "none";
+
+  }, 250);
+
+}
+
+</script>
       <!-- ============================================================
          NAVBAR
          ============================================================ -->
