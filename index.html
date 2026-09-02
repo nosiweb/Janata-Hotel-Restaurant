@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
       <meta name="author" content="জনতা">
       <meta name="description" content="জনতা Hostel & Restaurant">
       <title>জনতা Hostel & Restaurant</title>
@@ -22,76 +22,43 @@
       <link rel="stylesheet" href="css/style.css" />
    </head>
    <body>
-      <!-- ============================================================
-         TOP BAR
-         ============================================================ -->
-      <div id="topbar">
-         <div class="container">
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-               <div class="top-contact d-flex flex-wrap">
-                  <span><i class="fas fa-phone-alt"></i>+91 86173 45235</span>
-                  
-                  <span><i class="fas fa-map-marker-alt"></i>SBI Rd, Murarai, West Bengal 731219</span>
-               </div>
-               <div class="d-flex align-items-center gap-3">
-                  <span class="ttag"><i class="fas fa-fire me-1"></i>Delivery Available!</span>
-               </div>
-            </div>
-         </div>
-      </div>
 	   <!-- =====================================================
-     NOSIWEB — DEMO WEBSITE DISCLAIMER
-     Place immediately after <body>
+     NOSIWEB — DEMO WEBSITE NOTICE
 ====================================================== -->
 
 <div id="nosiDemoNotice" class="nosi-demo-overlay">
 
   <div class="nosi-demo-box">
 
-    <!-- Information Icon -->
     <div class="nosi-demo-icon">
-      i
+      <i class="fas fa-info"></i>
     </div>
 
-
-    <!-- Heading -->
-    <h2>
-      Demo & Developer Practice Website
-    </h2>
-
-
-    <!-- Description -->
+    <h2>Demo Website</h2>
 
     <p>
       This website has been created by
-      <strong>NosiWeb</strong>
-      for demonstration, educational and developer
-      practice purposes.
+      <strong>NosiWeb</strong> for demonstration,
+      educational and developer practice purposes.
     </p>
-
 
     <p>
       This is <strong>not an official website</strong>
-      of the original business, organization, brand,
-      company or website represented by this project.
+      of the original business, organization, brand
+      or company represented by this project.
     </p>
-
 
     <p>
-      The original owner has no connection, partnership,
-      responsibility or affiliation with this demo website
-      unless explicitly stated otherwise.
+      The original owner has no connection,
+      partnership or responsibility for this
+      demonstration website unless stated otherwise.
     </p>
-
 
     <p>
-      For questions, concerns, copyright issues or other
-      matters regarding this demonstration website,
-      please contact the developer.
+      For questions, copyright concerns or other
+      matters related to this demo, please contact
+      the developer.
     </p>
-
-
-    <!-- Rights -->
 
     <div class="nosi-demo-rights">
 
@@ -99,18 +66,13 @@
 
       <br>
 
-      No ownership or rights are claimed over the original
-      business, brand, trademarks, logos, images or other
-      third-party materials represented in this demonstration.
+      No ownership or rights are claimed over
+      third-party business names, trademarks,
+      logos, images or materials shown here.
 
     </div>
 
-
-    <!-- Buttons -->
-
     <div class="nosi-demo-buttons">
-
-      <!-- Developer Website -->
 
       <a
         href="https://YOUR-DEVELOPER-WEBSITE.com"
@@ -118,18 +80,17 @@
         rel="noopener noreferrer"
         class="nosi-developer-btn">
 
+        <i class="fas fa-code"></i>
         Developer Information
 
       </a>
-
-
-      <!-- Enter Website -->
 
       <button
         type="button"
         onclick="nosiEnterWebsite()"
         class="nosi-enter-btn">
 
+        <i class="fas fa-check"></i>
         OK, I Understand
 
       </button>
@@ -141,39 +102,67 @@
 </div>
 
 
-
 <style>
 
 /* =====================================================
-   NOSIWEB DEMO OVERLAY
-====================================================== */
+   GLOBAL RESPONSIVE FIX
+   Prevents website from becoming wider than the screen
+===================================================== */
+
+html,
+body {
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+}
+
+
+/* Prevent images from creating horizontal overflow */
+
+img {
+
+  max-width: 100%;
+
+}
+
+
+/* =====================================================
+   NOSIWEB POPUP OVERLAY
+===================================================== */
 
 .nosi-demo-overlay {
 
   position: fixed;
 
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  height: 100dvh;
 
   z-index: 999999;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding:
-    max(12px, env(safe-area-inset-top))
-    max(12px, env(safe-area-inset-right))
-    max(12px, env(safe-area-inset-bottom))
-    max(12px, env(safe-area-inset-left));
+  box-sizing: border-box;
+
+  padding: 16px;
 
   background: rgba(0, 0, 0, 0.72);
 
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
 
   overflow: hidden;
 
@@ -181,39 +170,37 @@
 
 
 /* =====================================================
-   POPUP
-====================================================== */
+   POPUP BOX
+===================================================== */
 
 .nosi-demo-box {
 
-  width: min(600px, 100%);
+  width: 100%;
 
-  /*
-     Never become taller than the screen.
-  */
+  max-width: 560px;
 
-  max-height: calc(100dvh - 24px);
+  max-height: calc(100dvh - 32px);
+
+  box-sizing: border-box;
 
   overflow-y: auto;
 
-  padding: 28px;
+  overflow-x: hidden;
+
+  padding: 26px 28px;
 
   background: #ffffff;
 
   color: #27272a;
 
-  border-radius: 18px;
-
   border: 1px solid #e4e4e7;
 
+  border-radius: 18px;
+
   box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.25);
+    0 20px 60px rgba(0, 0, 0, 0.28);
 
   text-align: center;
-
-  /*
-     Smooth scrolling on mobile.
-  */
 
   -webkit-overflow-scrolling: touch;
 
@@ -221,12 +208,12 @@
 
 
 /* =====================================================
-   CUSTOM SCROLLBAR
-====================================================== */
+   POPUP SCROLLBAR
+===================================================== */
 
 .nosi-demo-box::-webkit-scrollbar {
 
-  width: 5px;
+  width: 4px;
 
 }
 
@@ -247,18 +234,20 @@
 
 /* =====================================================
    ICON
-====================================================== */
+===================================================== */
 
 .nosi-demo-icon {
 
-  width: 46px;
-  height: 46px;
+  width: 44px;
 
-  margin: 0 auto 14px;
+  height: 44px;
+
+  margin: 0 auto 12px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -269,24 +258,22 @@
 
   border: 1px solid #fed7aa;
 
-  font-size: 22px;
-
-  font-weight: 700;
+  font-size: 18px;
 
 }
 
 
 /* =====================================================
    HEADING
-====================================================== */
+===================================================== */
 
 .nosi-demo-box h2 {
 
-  margin: 0 0 14px;
+  margin: 0 0 13px;
 
   color: #18181b;
 
-  font-size: clamp(20px, 5vw, 25px);
+  font-size: 24px;
 
   line-height: 1.25;
 
@@ -297,15 +284,15 @@
 
 /* =====================================================
    TEXT
-====================================================== */
+===================================================== */
 
 .nosi-demo-box p {
 
-  margin: 0 0 11px;
+  margin: 0 0 10px;
 
   color: #52525b;
 
-  font-size: 13.5px;
+  font-size: 13px;
 
   line-height: 1.55;
 
@@ -320,14 +307,14 @@
 
 
 /* =====================================================
-   RIGHTS
-====================================================== */
+   RIGHTS NOTICE
+===================================================== */
 
 .nosi-demo-rights {
 
-  margin-top: 16px;
+  margin-top: 15px;
 
-  padding: 12px 14px;
+  padding: 11px 13px;
 
   border-radius: 9px;
 
@@ -335,7 +322,7 @@
 
   color: #71717a;
 
-  font-size: 11.5px;
+  font-size: 10.5px;
 
   line-height: 1.5;
 
@@ -344,50 +331,60 @@
 
 /* =====================================================
    BUTTONS
-====================================================== */
+===================================================== */
 
 .nosi-demo-buttons {
 
-  margin-top: 18px;
+  width: 100%;
+
+  margin-top: 17px;
 
   display: flex;
 
-  align-items: center;
+  align-items: stretch;
 
   justify-content: center;
 
-  gap: 10px;
+  gap: 9px;
 
 }
 
 
+/* Both buttons */
+
 .nosi-developer-btn,
 .nosi-enter-btn {
 
-  min-height: 42px;
+  min-width: 0;
 
-  padding: 10px 18px;
+  min-height: 40px;
 
-  border-radius: 9px;
+  padding: 9px 14px;
 
-  font-size: 13px;
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 12.5px;
 
   font-weight: 600;
 
+  line-height: 1.2;
+
+  text-decoration: none;
+
   white-space: nowrap;
 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: 0.2s ease;
 
 }
 
 
 /* =====================================================
    DEVELOPER BUTTON
-====================================================== */
+===================================================== */
 
 .nosi-developer-btn {
 
@@ -396,6 +393,10 @@
   align-items: center;
 
   justify-content: center;
+
+  gap: 7px;
+
+  flex: 1;
 
   border: 1px solid #e4e4e7;
 
@@ -412,16 +413,24 @@
 
   color: #ea580c;
 
-  transform: translateY(-1px);
-
 }
 
 
 /* =====================================================
    ENTER BUTTON
-====================================================== */
+===================================================== */
 
 .nosi-enter-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  flex: 1;
 
   border: 1px solid #18181b;
 
@@ -440,20 +449,34 @@
 
   background: #f97316;
 
-  transform: translateY(-1px);
-
 }
 
 
 /* =====================================================
    TABLET
-====================================================== */
+===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+
+  .nosi-demo-overlay {
+
+    padding: 12px;
+
+  }
 
   .nosi-demo-box {
 
-    padding: 24px 20px;
+    max-height: calc(100dvh - 24px);
+
+    padding: 22px 20px;
+
+    border-radius: 16px;
+
+  }
+
+  .nosi-demo-box h2 {
+
+    font-size: 21px;
 
   }
 
@@ -462,92 +485,82 @@
 
 /* =====================================================
    MOBILE
-====================================================== */
+===================================================== */
 
 @media (max-width: 480px) {
 
   .nosi-demo-overlay {
 
-    padding: 10px;
+    padding: 9px;
 
   }
-
 
   .nosi-demo-box {
 
-    width: 100%;
+    max-height: calc(100dvh - 18px);
 
-    max-height: calc(100dvh - 20px);
+    padding: 19px 16px;
 
-    padding: 22px 17px;
-
-    border-radius: 16px;
+    border-radius: 15px;
 
   }
-
 
   .nosi-demo-icon {
 
-    width: 42px;
-    height: 42px;
+    width: 40px;
 
-    margin-bottom: 11px;
+    height: 40px;
 
-    font-size: 20px;
+    margin-bottom: 10px;
+
+    font-size: 16px;
 
   }
-
 
   .nosi-demo-box h2 {
 
     font-size: 20px;
 
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 
   }
-
 
   .nosi-demo-box p {
 
-    font-size: 12.5px;
+    font-size: 12px;
 
-    line-height: 1.5;
+    line-height: 1.48;
 
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 
   }
-
 
   .nosi-demo-rights {
 
-    margin-top: 13px;
+    margin-top: 12px;
 
-    padding: 10px 11px;
+    padding: 9px 10px;
 
-    font-size: 10.5px;
+    font-size: 9.8px;
 
   }
-
 
   .nosi-demo-buttons {
 
-    margin-top: 15px;
+    margin-top: 14px;
 
-    gap: 8px;
+    gap: 7px;
 
   }
-
 
   .nosi-developer-btn,
   .nosi-enter-btn {
 
-    flex: 1;
+    min-height: 39px;
 
-    min-width: 0;
+    padding: 9px 7px;
 
-    padding: 10px 9px;
-
-    font-size: 12px;
+    font-size: 11.5px;
 
   }
 
@@ -556,16 +569,15 @@
 
 /* =====================================================
    VERY SMALL PHONES
-====================================================== */
+===================================================== */
 
 @media (max-width: 350px) {
 
   .nosi-demo-box {
 
-    padding: 18px 14px;
+    padding: 17px 13px;
 
   }
-
 
   .nosi-demo-box h2 {
 
@@ -573,22 +585,23 @@
 
   }
 
-
   .nosi-demo-box p {
 
-    font-size: 11.5px;
+    font-size: 11px;
 
   }
 
+  .nosi-demo-rights {
+
+    font-size: 9px;
+
+  }
 
   .nosi-demo-buttons {
 
     flex-direction: column;
 
-    width: 100%;
-
   }
-
 
   .nosi-developer-btn,
   .nosi-enter-btn {
@@ -597,6 +610,8 @@
 
     flex: none;
 
+    font-size: 12px;
+
   }
 
 }
@@ -604,34 +619,54 @@
 </style>
 
 
-
 <script>
 
 /* =====================================================
    ENTER WEBSITE
-====================================================== */
+===================================================== */
 
 function nosiEnterWebsite() {
 
   const notice =
     document.getElementById("nosiDemoNotice");
 
+  if (!notice) return;
+
+  notice.style.transition =
+    "opacity 0.25s ease, visibility 0.25s ease";
 
   notice.style.opacity = "0";
 
-  notice.style.transition =
-    "opacity 0.25s ease";
-
+  notice.style.visibility = "hidden";
 
   setTimeout(function () {
 
-    notice.style.display = "none";
+    notice.remove();
 
   }, 250);
 
 }
 
 </script>
+      <!-- ============================================================
+         TOP BAR
+         ============================================================ -->
+      <div id="topbar">
+         <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+               <div class="top-contact d-flex flex-wrap">
+                  <span><i class="fas fa-phone-alt"></i>+91 86173 45235</span>
+                  
+                  <span><i class="fas fa-map-marker-alt"></i>SBI Rd, Murarai, West Bengal 731219</span>
+               </div>
+               <div class="d-flex align-items-center gap-3">
+                  <span class="ttag"><i class="fas fa-fire me-1"></i>Delivery Available!</span>
+               </div>
+            </div>
+         </div>
+      </div>
+	   
+
       <!-- ============================================================
          NAVBAR
          ============================================================ -->
